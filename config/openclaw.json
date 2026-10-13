@@ -29,7 +29,7 @@
     "mode": "local",
     "auth": {
       "mode": "token",
-      "token": "f5e1a18acda32692ef3d73862b7a605d8e28f088a2e49c87",
+      "token": "8e01a27bf8a7c50b05f478d41d6bbf4448d35eff384bcd486c8c1c17dc091739",
       "rateLimit": {
         "maxAttempts": 10,
         "windowMs": 60000,
@@ -221,6 +221,6 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.7.1",
-    "lastTouchedAt": "2026-08-30T12:32:47.893Z"
+    "lastTouchedAt": "2026-10-13T11:37:20.047Z"
   }
 }
