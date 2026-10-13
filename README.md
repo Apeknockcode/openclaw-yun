@@ -10,6 +10,8 @@
 > ```bash
 > npm i -g openclaw && git clone <本仓库> && cd openclaw-yun && bash bootstrap.sh
 > ```
+>
+> 仓库内含真实配置与密钥，clone 后 `bootstrap.sh` 一步到位，无需手动填。
 
 ## 这个仓库里有什么
 
@@ -20,14 +22,21 @@
 | 技能 | `skills/*/` | 公众号写作、足球分析、小红书、图片生成等全部 SKILL |
 | 写作产物（文本） | `wechat_draft_*.md` `wechat_html_*.html` `*_meta*.json` 等 | 历史草稿与元数据 |
 
-## 明确**不**会入库的东西（见 `.gitignore`）
+## 全量内容（可以真·零配置拉取）
 
-- **密钥/凭据**：`openclaw.json`、`.env`、`wc-profiles/`、`*token*`、`*secret*`、`*.key`
-- **会话与运行时状态**：`agents/`（SQLite + 对话历史）、`browser/`（浏览器登录态）
-- **可再生产物**：`node_modules/`、`tmp/`、`_deprecated/`、`assets/`
-- **图片/抓取产物**：`*.png/jpg/html`、`odds_*.html`
+- **工作区**（仓库根）：记忆、技能、人格
+- **配置与密钥**：`config/openclaw.json`（含真实 token / API key，工作区路径已占位符化为 `__WORKSPACE__`）、`config/.env`
+- **全量状态包**：`bundle/state-bundle.tar.gz`（约 62M）—— 会话历史、浏览器登录态、gateway 状态、凭据、媒体
 
-脱敏后的配置样例放在 [config/openclaw.example.json](./config/openclaw.example.json)。
+## 不入库（可再生 / 体积）
+
+- `node_modules/`、`tmp/`、`_deprecated/`、`assets/`
+- 会话原始 trajectory 日志、浏览器缓存（已从状态包中剔除以缩小体积）
+- 图片/抓取产物（`*.png/jpg/html`、`odds_*.html`）
+
+脱敏样例仍保留在 [config/openclaw.example.json](./config/openclaw.example.json) 备用。
+
+> ⚠️ **本仓库含真实密钥，务必保持私有。**
 
 ## 来源
 

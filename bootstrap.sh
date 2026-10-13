@@ -24,16 +24,22 @@ fi
 
 mkdir -p "$STATE"
 
+# 0.5) 还原全量状态包（会话历史 / 浏览器登录态 / 凭据等），若有
+if [ -f "$REPO/bundle/state-bundle.tar.gz" ]; then
+  echo "==> 解压全量状态包 bundle/state-bundle.tar.gz -> $STATE"
+  tar -xzf "$REPO/bundle/state-bundle.tar.gz" -C "$STATE"
+fi
+
 # 1) 同步工作区（排除仓库自身的 git 与引导文件）
 if command -v rsync >/dev/null 2>&1; then
   rsync -a \
-    --exclude='.git/' --exclude='config/' --exclude='bootstrap.sh' \
+    --exclude='.git/' --exclude='config/' --exclude='bundle/' --exclude='bootstrap.sh' \
     --exclude='README.md' --exclude='RESTORE.md' \
     "$REPO/" "$WS/"
 else
   mkdir -p "$WS"
   cp -a "$REPO/." "$WS/"
-  rm -rf "$WS/.git" "$WS/config" "$WS/bootstrap.sh" "$WS/README.md" "$WS/RESTORE.md"
+  rm -rf "$WS/.git" "$WS/config" "$WS/bundle" "$WS/bootstrap.sh" "$WS/README.md" "$WS/RESTORE.md"
 fi
 
 # 2) 配置：优先真实配置 config/openclaw.json，否则用脱敏样例

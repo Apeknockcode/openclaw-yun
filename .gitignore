@@ -70,3 +70,7 @@ build/
 *.tsbuildinfo
 .npm
 .pnpm-store
+
+# 全量状态包（明确允许入库）
+!bundle/
+!bundle/state-bundle.tar.gz

@@ -92,12 +92,20 @@ openclaw status
 - **设备/配对**：新主机上原设备 token 失效，需在 Control UI 重新批准。
 - **本地记忆搜索**：会重新下载 embedding 模型；国内需 `HF_ENDPOINT=https://hf-mirror.com`。
 - **插件依赖**：`~/.openclaw/npm` 未入库；如需重建 `openclaw plugins update` / 重装。
-- **浏览器登录态**：`browser/` 是 Linux 版 Chromium 数据，跨系统不可直接复用，需重新登录。
+- **浏览器登录态**：`browser/` 是 Linux 版 Chromium 数据，跨系统（mac/win）可能需重新登录。
 
-## 未包含的内容（如需完整还原，请另行保管）
+## 全量状态包
 
-| 内容 | 源机路径 | 大小 | 处理方式 |
-|---|---|---|---|
-| 会话/对话历史 | `~/.openclaw/agents/main/` | ~395M | 加密打包单独保管 |
-| 浏览器登录态 | `~/.openclaw/browser/` | ~187M | 通常可放弃，重新登录 |
-| 真实配置与密钥 | `~/.openclaw/openclaw.json`、`.env` | 小 | 密码管理器 / 加密包 |
+`bundle/state-bundle.tar.gz`（约 62M）包含：
+
+| 内容 | 说明 |
+|---|---|
+| `agents/` | 会话历史（已剔除 trajectory 原始日志与已删除/重置的碎片） |
+| `state/` | gateway 状态库 `openclaw.sqlite` |
+| `browser/` | 浏览器登录态（已剔除各类缓存；Linux 版 Chromium 数据，跨系统可能需重新登录） |
+| `credentials/` `identity/` `devices/` | 凭据与设备标识 |
+| `media/` | 历史媒体文件 |
+
+`bootstrap.sh` 若发现该包会自动解压到状态目录，因此 clone + 运行即可还原全部内容。
+
+> 不含：`node_modules/`（依赖，可再生）、会话 trajectory 原始日志、浏览器缓存、工作区图片/草稿产物。
