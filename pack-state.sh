@@ -21,6 +21,7 @@ for d in agents state media credentials identity devices browser; do
     --exclude='agents/main/sessions/*.trajectory-path.json' \
     --exclude='agents/main/sessions/*.deleted.*' \
     --exclude='agents/main/sessions/*.reset.*' \
+    --exclude='*.bak*' --exclude='*.swp' \
     --exclude='browser/openclaw/user-data/Default/Cache' \
     --exclude='browser/openclaw/user-data/Default/Code Cache' \
     --exclude='browser/openclaw/user-data/Default/GPUCache' \
