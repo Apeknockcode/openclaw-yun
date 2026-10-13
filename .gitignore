@@ -4,6 +4,7 @@ wc-profiles/
 .env
 .env.*
 !config/.env.example
+!config/.env
 *secret*
 *token*
 *credential*

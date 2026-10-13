@@ -1,0 +1,226 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "__WORKSPACE__",
+      "models": {
+        "deepseek/deepseek-v4-flash": {
+          "alias": "DeepSeek"
+        },
+        "claude-cli/claude-opus-4-8": {}
+      },
+      "model": {
+        "primary": "deepseek/deepseek-v4-flash"
+      },
+      "imageModel": {
+        "primary": "openrouter/google/gemini-2.0-flash-exp"
+      },
+      "memorySearch": {
+        "provider": "local"
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "model": "deepseek/deepseek-v4-flash"
+      }
+    ]
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "f5e1a18acda32692ef3d73862b7a605d8e28f088a2e49c87",
+      "rateLimit": {
+        "maxAttempts": 10,
+        "windowMs": 60000,
+        "lockoutMs": 300000
+      }
+    },
+    "port": 18789,
+    "bind": "lan",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowedOrigins": [
+        "http://localhost:18789",
+        "http://127.0.0.1:18789"
+      ]
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send",
+        "sms.search"
+      ]
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "plugins": {
+    "entries": {
+      "deepseek": {
+        "enabled": true
+      },
+      "perplexity": {
+        "enabled": true
+      },
+      "llama-cpp": {
+        "enabled": true
+      },
+      "openrouter": {
+        "enabled": true
+      },
+      "anthropic": {
+        "enabled": true
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "openrouter": {
+        "apiKey": "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"
+      },
+      "deepseek": {
+        "timeoutSeconds": 600,
+        "maxTokens": 65536
+      }
+    }
+  },
+  "auth": {
+    "profiles": {
+      "deepseek:default": {
+        "provider": "deepseek",
+        "mode": "api_key"
+      },
+      "openrouter:default": {
+        "provider": "openrouter",
+        "mode": "api_key"
+      }
+    }
+  },
+  "skills": {
+    "entries": {
+      "goplaces": {
+        "apiKey": "GOOGLE_PLACES_API_KEY",
+        "enabled": false
+      },
+      "1password": {
+        "enabled": false
+      },
+      "blogwatcher": {
+        "enabled": false
+      },
+      "blucli": {
+        "enabled": false
+      },
+      "camsnap": {
+        "enabled": false
+      },
+      "coding-agent": {
+        "enabled": false
+      },
+      "eightctl": {
+        "enabled": false
+      },
+      "gemini": {
+        "enabled": false
+      },
+      "gh-issues": {
+        "enabled": false
+      },
+      "gifgrep": {
+        "enabled": false
+      },
+      "github": {
+        "enabled": false
+      },
+      "gog": {
+        "enabled": false
+      },
+      "himalaya": {
+        "enabled": false
+      },
+      "mcporter": {
+        "enabled": false
+      },
+      "nano-pdf": {
+        "enabled": false
+      },
+      "obsidian": {
+        "enabled": false
+      },
+      "openai-whisper": {
+        "enabled": false
+      },
+      "openai-whisper-api": {
+        "enabled": false
+      },
+      "openhue": {
+        "enabled": false
+      },
+      "oracle": {
+        "enabled": false
+      },
+      "ordercli": {
+        "enabled": false
+      },
+      "sag": {
+        "enabled": false
+      },
+      "session-logs": {
+        "enabled": false
+      },
+      "sherpa-onnx-tts": {
+        "enabled": false
+      },
+      "songsee": {
+        "enabled": false
+      },
+      "sonoscli": {
+        "enabled": false
+      },
+      "spotify-player": {
+        "enabled": false
+      },
+      "summarize": {
+        "enabled": false
+      },
+      "tmux": {
+        "enabled": false
+      },
+      "trello": {
+        "enabled": false
+      },
+      "video-frames": {
+        "enabled": false
+      },
+      "xurl": {
+        "enabled": false
+      },
+      "elite-longterm-memory": {
+        "enabled": false
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-08-30T12:32:47.092Z",
+    "lastRunVersion": "2026.7.1",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.7.1",
+    "lastTouchedAt": "2026-08-30T12:32:47.893Z"
+  }
+}
