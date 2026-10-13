@@ -1,0 +1,13 @@
+{
+  "lastChecks": {
+    "projects": 1786591260,
+    "workspace": 1786591260,
+    "heartbeat": 1788159933,
+    "qsmx_topic": 1788067800,
+    "football_schedule": 1787722200,
+    "wechat_cron_verify": 1786923000,
+    "wechat_watchdog": 1787203800,
+    "football_results": 1787794416
+  },
+  "notes": "8/31 15:05 心跳：无待办新项；下一节点=今晚 ~20:30 足球赛前预测（待用户触发）"
+}
