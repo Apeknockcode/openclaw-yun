@@ -1,7 +1,7 @@
 {
   "agents": {
     "defaults": {
-      "workspace": "/root/.openclaw/workspace",
+      "workspace": "__WORKSPACE__",
       "models": {
         "deepseek/deepseek-v4-flash": {
           "alias": "DeepSeek"

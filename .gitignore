@@ -3,6 +3,7 @@ wc-profiles/
 .clawhub/
 .env
 .env.*
+!config/.env.example
 *secret*
 *token*
 *credential*
@@ -68,4 +69,3 @@ build/
 *.tsbuildinfo
 .npm
 .pnpm-store
-.env.example

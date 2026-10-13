@@ -5,7 +5,11 @@
 这个仓库保存的是 OpenClaw 的"大脑"部分——人格、记忆、技能、写作与足球分析的全部沉淀，
 不包含任何密钥、会话数据库或可再生的依赖。
 
-> 恢复/迁移步骤见 [RESTORE.md](./RESTORE.md)。
+> **换台机器想直接用？** 见 [RESTORE.md](./RESTORE.md)；核心是一键脚本：
+>
+> ```bash
+> npm i -g openclaw && git clone <本仓库> && cd openclaw-yun && bash bootstrap.sh
+> ```
 
 ## 这个仓库里有什么
 

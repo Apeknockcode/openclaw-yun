@@ -2,6 +2,22 @@
 
 目标：在新机器上把 OpenClaw 跑起来，并还原这台服务器的工作区（记忆 + 技能 + 人格）。
 
+## 一键（推荐）
+
+```bash
+npm i -g openclaw          # 1. 装 OpenClaw（需 Node 22+/24）
+git clone git@github.com:Apeknockcode/openclaw-yun.git
+cd openclaw-yun
+bash bootstrap.sh          # 2. 自动还原工作区+配置+服务
+```
+
+`bootstrap.sh` 会自动：同步工作区到 `~/.openclaw/workspace`、生成 `openclaw.json`（路径已适配本机）、
+修正工作区内写死的旧绝对路径、跑 `openclaw doctor` 并安装后台服务。
+
+> 若仓库里没有真实 `config/openclaw.json`，脚本会退回脱敏样例，这时需要手动填 `REPLACE_ME`（见下）。
+
+## 手动步骤（备查）
+
 ## 0. 前置
 
 - 安装 Node（建议 22+，与源机一致的话用 Node 24）
