@@ -34,12 +34,12 @@ fi
 if command -v rsync >/dev/null 2>&1; then
   rsync -a \
     --exclude='.git/' --exclude='config/' --exclude='bundle/' --exclude='bootstrap.sh' \
-    --exclude='README.md' --exclude='RESTORE.md' \
+    --exclude='README.md' --exclude='RESTORE.md' --exclude='SETUP.md' --exclude='pack-state.sh' \
     "$REPO/" "$WS/"
 else
   mkdir -p "$WS"
   cp -a "$REPO/." "$WS/"
-  rm -rf "$WS/.git" "$WS/config" "$WS/bundle" "$WS/bootstrap.sh" "$WS/README.md" "$WS/RESTORE.md"
+  rm -rf "$WS/.git" "$WS/config" "$WS/bundle" "$WS/bootstrap.sh" "$WS/README.md" "$WS/RESTORE.md" "$WS/SETUP.md" "$WS/pack-state.sh"
 fi
 
 # 2) 配置：优先真实配置 config/openclaw.json，否则用脱敏样例
